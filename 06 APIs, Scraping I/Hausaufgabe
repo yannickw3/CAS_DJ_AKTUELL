@@ -1,0 +1,18 @@
+Webseite: transfermarkt.ch
+Pfad, der mich interessiert: https://www.transfermarkt.ch/super-league/startseite/wettbewerb/C1/plus/?saison_id=2017
+Hier sind die Teams der Super League Saison 17/18 aufgelistet,
+nach Kadergrösse, Durchschnittsalter, Anzahl Legionäre, Gesamtmarktwert, Durchschnittsmarktwert
+
+Gewünschtes Resultat: Teams und oben genannte Faktoren in einer Tabelle bzw. csv-Datei
+
+API:
+Daten mit dem Befehl request.get herunterholen
+Daten mit dem Befel count.json() zählen
+Einen for-Loop bauen
+Mit dem Befehl pd.DataFrame(neue_liste).to_csv die Liste in eine csv-Datei umwandeln
+
+html-Code:
+from bs4 import BeautifulSoup
+soup = BeautifulSoup(Dokument, 'html.parser')
+soup.find_all('Suchbegriff')    soup.find_all('div', {class_='box'})
+Einen for-Loop bauen

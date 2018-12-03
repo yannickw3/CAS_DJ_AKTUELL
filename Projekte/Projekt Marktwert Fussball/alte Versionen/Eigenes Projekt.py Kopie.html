@@ -1,0 +1,270 @@
+#!/usr/bin/env python
+# coding: utf-8
+
+# In[27]:
+
+
+import requests
+from bs4 import BeautifulSoup
+import pandas as pd
+
+
+# In[28]:
+
+
+headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+url = 'https://www.transfermarkt.ch/super-league/startseite/wettbewerb/C1/plus/?saison_id=2017'
+
+r = requests.get(url, headers=headers)
+soup = BeautifulSoup(r.text, 'html.parser')
+
+
+# In[29]:
+
+
+soup
+
+
+# In[30]:
+
+
+vereine = soup.find_all('td', {'class':'hauptlink no-border-links show-for-small show-for-pad'})
+
+
+# In[31]:
+
+
+vereine[0].text
+
+
+# In[32]:
+
+
+for team in vereine:
+    print(team.text)
+
+
+# In[33]:
+
+
+marktwerte = soup.find_all('td', {'class':'rechts show-for-small show-for-pad nowrap'})
+
+
+# In[34]:
+
+
+marktwerte[0].text
+
+
+# In[35]:
+
+
+for wert in marktwerte:
+    print(wert.text)
+
+
+# In[36]:
+
+
+for wert in marktwerte[2:][::2]:
+    print(wert.text)
+
+
+# In[37]:
+
+
+for wert in marktwerte[2:][::2]:
+    print(float(wert.text.replace(' Mio. €', '').replace(',', '.')))
+
+
+# In[54]:
+
+
+teamwertliste = []
+for team, wert in zip(vereine, marktwerte[2:][::2]):
+    team = team.text
+    wert = float(wert.text.replace(' Mio. €', '').replace(',', '.'))
+    dictionary = {'Team': team,
+                 'Wert': wert}
+    
+    teamwertliste.append(dictionary)
+
+
+# In[55]:
+
+
+pd.DataFrame(teamwertliste)
+
+
+# In[ ]:
+
+
+
+
+
+# In[41]:
+
+
+# Das gleiche Vorgehen bei der Tabelle mit den Punkten:
+
+
+# In[77]:
+
+
+# Finde alle Tabellen mit class 'responsive-table'
+soup_all_tables = soup.find_all('div', {'class':'responsive-table'})
+
+
+# In[78]:
+
+
+# Die Tabelle, die ich suche, ist die zweite > deshalb:
+soup_my_table = soup_all_tables[1]
+
+
+# In[79]:
+
+
+# In dieser Tabelle alle 'tr' finden (einzelne Reihen)
+soup_rows = soup_my_table.find_all('tr')
+
+
+# In[80]:
+
+
+for row in soup_rows:
+    # Achtung: Die erste wird die Überschriften-Reihe sein
+    print(row.text)
+
+
+# In[82]:
+
+
+for row in soup_rows[1:]:            # Die erste Reihe wird die Überschrift sein, deshalb skippen mit [1:]
+    alle_tds = row.find_all('td')
+    letzte_td = alle_tds[-1]         # Nimm das letzte Element der Liste mit [-1]
+    print(letzte_td.text)
+
+
+# In[94]:
+
+
+teampunkteliste = {}
+
+for row in soup_rows[1:]: # Die erste Reihe wird die Überschrift sein, deshalb skippen mit [1:]
+    alle_tds = row.find_all('td')
+    punkte = alle_tds[-1] # Nimm die Punkte aus dem letzten Element der Liste mit [-1]
+    team = alle_tds[2] # Nimm den Teamnamen aus dem dritten Element der Liste mit [2]
+    teampunkteliste[team.text.strip()] = int(punkte.text) # Setzte das Päärchen aus Key 'Teamname' und Value 'Punktzahl' in die Liste
+
+teampunkteliste
+
+
+# In[ ]:
+
+
+
+
+
+# In[ ]:
+
+
+
+
+
+# In[96]:
+
+
+teamwertliste = []
+for team, wert in zip(vereine, marktwerte[2:][::2]):
+    team = team.text
+    wert = float(wert.text.replace(' Mio. €', '').replace(',', '.'))
+    row = teampunkteliste[team]
+    dictionary = {'Team': team, 'Wert': wert, 'Punkte': row}
+    
+    teamwertliste.append(dictionary)
+
+
+# In[97]:
+
+
+teamwertliste
+
+
+# In[98]:
+
+
+pd.DataFrame(teamwertliste)
+
+
+# In[99]:
+
+
+# jetzt noch für mehrere Jahre, nicht nur Saison 17/18
+
+
+# In[100]:
+
+
+jahre = list(range(2010,2019))
+
+
+# In[101]:
+
+
+url = "https://www.transfermarkt.ch/super-league/startseite/wettbewerb/C1/plus/?saison_id="
+
+
+# In[102]:
+
+
+for jahr in jahre:
+    print(jahr)
+    print(url+str(jahr))
+
+
+# In[103]:
+
+
+# alles zusammenführen:
+
+
+# In[105]:
+
+
+allejahre = []
+jahre = list(range(2010,2019))
+
+for jahr in jahre:
+    url = "https://www.transfermarkt.ch/super-league/startseite/wettbewerb/C1/plus/?saison_id="
+    url = (url+str(jahr))
+    headers = {'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/39.0.2171.95 Safari/537.36'}
+    r = requests.get(url, headers=headers)
+    soup = BeautifulSoup(r.text, 'html.parser')
+           
+    for team, wert in zip(vereine, marktwerte[2:][::2]):
+        team = team.text
+        wert = float(wert.text.replace(' Mio. €', '').replace(',', '.'))
+        row = teampunkteliste[team]
+        dictionary = {'Team': team, 'Wert': wert, 'Punkte': row}
+    
+        allejahre.append(dictionary)
+
+
+# In[106]:
+
+
+pd.DataFrame(allejahre)
+
+
+# In[107]:
+
+
+pd.DataFrame(allejahre).to_csv('Projekt transfermarkt.ch')
+
+
+# In[ ]:
+
+
+
+

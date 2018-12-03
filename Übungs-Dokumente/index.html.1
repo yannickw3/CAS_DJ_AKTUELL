@@ -1,0 +1,1723 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "//www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="//www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Pragma" content="no-cache" />
+<meta http-equiv="Expires" content="-1" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<!-- head_title --> <meta name="robots" content="index, follow, noarchive" /> 
+<!-- GOOGLE DFP TOP scripts start -->
+<script src="https://files.newsnetz.ch//scripts/dimension_watcher.js"></script>
+<script>DimensionWatcher.watchIframeContent();</script>
+<!-- GOOGLE DFP TOP scripts end -->
+<meta name="description" content="Nachrichten, Analysen, Bilder und Video zu Politik, Wirtschaft, Sport, Kultur, Wissen, Technik, Auto und mehr." /> 
+<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="rss.html" />
+
+<title> News Zürich - tagesanzeiger.ch</title>
+<script src="https://files.newsnetz.ch/scripts/updated/jquery-1.4.2.min.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.core.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.widget.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.tabs.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/jquery.pagination.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.getUrlParam.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery-validate-1.5.2/jquery.validate.min.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery-validate-1.5.2/localization/messages_de.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/easyTooltip.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.form.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.flash.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.cookie.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.url.packed.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.crypt.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/ajax.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/swfobject.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/misc6.js?id=16" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/ad_red.js" type="text/javascript"></script>
+
+<script src="https://files.newsnetz.ch/scripts/dimension_watcher.js"></script>
+<script>
+	DimensionWatcher.watchIframeContent();
+</script>
+
+<!-- Includes used for framework.js, nn2 slideshow and nn2 comments -->
+<script src="https://files.newsnetz.ch/cdn/html5shiv/3/dist/html5shiv.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/es5-shim/4/es5-shim.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/es5-shim/4/es5-sham.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/loader.js/3/loader.js"></script>
+<script src="https://files.newsnetz.ch/cdn/jquery/1/dist/jquery.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/jquery-simple-placeholder/jquery.simpleplaceholder.js"></script>
+<script src="https://files.newsnetz.ch/cdn/hammer.js/2/hammer.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/handlebars/3/handlebars.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/rsvp/3/rsvp.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/swiper/2/dist/idangerous.swiper.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/react/0.14/react-with-addons.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/react/0.14/react-dom.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/lodash/3/lodash.min.js"></script>
+<script src="https://files.newsnetz.ch/cdn/postscribe/1/dist/postscribe.min.js"></script>
+
+<script src="//www.google-analytics.com/analytics.js"></script>
+<script src="//platform.instagram.com/de_de/embeds.js"></script>
+
+<script type="text/javascript">
+    // Used for app.js and framework.js
+    window.cre_jq = jQuery.noConflict(true);
+</script>
+
+<!-- Used for new nn2 slideshow -->
+<script src="https://files.newsnetz.ch/cdn/nn2/framework/0.1/framework.js?v=270"></script>
+<!-- <script src="https://files.newsnetz.ch/scripts/exportedFromNN2/framework.js?v=270" type="text/javascript"></script> -->
+
+<script>
+    // Load statistics for slideshow and comments from NN2 framework
+    (function($) {
+        var config = require("framework/config").config;
+
+        config.configure({
+            env: "desktop",
+            apiUrl: "https://m.tagesanzeiger.ch/api",
+            ads: {
+                enabled: true
+            }
+        });
+
+        if (window.location.host.indexOf("devlocal")) {
+            config.configure({
+                apiUrl: config.apiUrl.replace("devlocal", "ch")
+            });
+        }
+
+        $.getJSON(config.apiUrl + "/sites/default").then(function(payload) {
+            require("framework/statistics").statistics.init({
+                env: config.env,
+                gtm: {
+                    id: payload.site.gtm_id
+                }
+            }, {
+                "google_analytics": {
+                    "customVars": [{
+                        "name": "device_characteristics",
+                        "value": "desktop"
+                    }, {
+                        "name": "app_mode",
+                        "value": "browser"
+                    }, {
+                        "name": "version",
+                        "value": config.version
+                    }, {
+                        "name": "ad_blocker",
+                        "value": !window.adblockJsFile
+                    }]
+                }
+            });
+        });
+    })(cre_jq);
+</script>
+
+<script src="https://files.newsnetz.ch/scripts/liveticker.js?v=220" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/slideshow.js?v=262" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/sm.js" type="text/javascript"></script>
+
+<!-- tracking_identifier:  -->
+
+<meta name="c1_user_info" content=''>
+
+<script>
+    var config = require("framework/config").config,
+        paywallInterface = require("framework/paywallInterface").paywallInterface,
+        paywallEventHandler = require("framework/paywallEventHandler").paywallEventHandler;
+
+    paywallInterface.configure($.extend({}, config, {
+        "paywall_status": config.paywall.status.enabled,
+        "eventHandler": paywallEventHandler
+    }));
+
+    paywallInterface.init().then(function() {
+        var url = window.location.href.toString().split(window.location.host)[1],
+            channels = url.split("/"),
+            regexResult = url.match(/.*\/story\/([0-9]{8})/i);
+
+        var premium = 0;
+
+        var trackingInfo = {
+            "cms_id": (regexResult ? regexResult[1] : 0),
+            "main_channel": (window.location.pathname === "/" ? "home" : channels[1]),
+            "sub_channel": channels[2],
+            "doc_type": (premium ? "premium" : (regexResult ? "article" : "section"))
+        }
+
+        // Check if the current site is a blog
+        if(window.location.host.indexOf("blog") > -1) {
+            channels = channels.filter(function(e, i) {
+                return e !== "index.php" && e !== "category";
+            });
+
+            trackingInfo.sub_channel = "";
+            trackingInfo.doc_type = "section";
+
+            // Check if it is a blog article (if the third url section contains only numbers)
+            var regexResult = channels[2].match(/[0-9]+/i);
+            if(regexResult) {
+                trackingInfo.cms_id = url;
+                trackingInfo.doc_type = "article";
+            } else {
+                trackingInfo.sub_channel = channels[2];
+            }
+        }
+
+        paywallInterface.track(trackingInfo);
+
+        // Track page complete event with ad blocker
+        $(window).load(function() {
+            ray.run(function(isDetected) {
+                paywallInterface.track_pagecomplete($.extend({}, trackingInfo, {
+                    adblock: isDetected ? "full" : "no"
+                }));
+            });
+        });
+    });
+</script>
+
+    <img style="display:none" src="https://mcdn.newsnetz.ch/upload/1/2/127790.png" />
+    <img style="display:none" src="https://cdn.newsnetz.ch/upload/1/2/127790.png" />
+    <img style="display:none" src="https://files.newsnetz.ch/upload/1/2/127790.png" />
+    <img style="display:none" src="https://files2.newsnetz.ch/upload/1/2/127790.png" />
+    <script src="https://files.newsnetz.ch/scripts/ghostbuster.min.js" type="text/javascript"></script>
+
+    <script>
+        window.dataLayer = window.dataLayer || [];
+    </script>
+
+    <!-- Google Tag Manager -->
+    <script>
+        if (! window.googleTagManagerStarted) {
+            // According to fabian, this code can be included multiple times per page, so we make sure at this point
+            // that we initialize gtm only once
+            window.googleTagManagerStarted = true;
+            
+            (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+            new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+            j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+            '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j ,f);
+            })(window,document,'script','dataLayer','GTM-MZ6VL78');
+        }
+    </script>
+    <!-- End Google Tag Manager -->
+
+    <script>
+        // Add pageview tracking for GTM
+        var storyId = "",
+        premium = "",
+        article_title = "",
+        article_type = "",
+        publish_date = "0",
+        pageType = "category",
+        category = "zuerich",
+        subcategory = "default";
+
+        if (publish_date == "0") {publish_date = "";}
+
+        var uid = undefined;
+        try {
+            uid = JSON.parse(document.querySelector("meta[name='c1_user_info']").getAttribute("content")).user_id;
+        }
+        catch(err) {
+            uid = undefined;
+        }
+
+        window.dataLayer.push({
+            "event": "pageview",
+            "pagetype": pageType,
+            "category": (category) ? category : "default",
+            "subcategory": (subcategory) ? subcategory : "default",
+            "article_id": (storyId) ? storyId : undefined,
+            "article_type": (article_type) ? article_type : undefined,
+            "uid": uid,
+            "article_title": (article_title) ? article_title : undefined,
+            "publish_date": (publish_date) ? publish_date : undefined,
+            "premium": (premium) ? premium : undefined
+        });
+
+        // Add Ghostbuster adblocker detection
+        var ray = new Ghostbuster();
+        ray.run(function(isDetected) {
+            if(isDetected) {
+                window.dataLayer.push({
+                    "event": "Adblocker",
+                    "action": "detection"
+                });
+            }
+        });
+    </script>
+
+    <!-- GOOGLE DFP TOP scripts start -->
+    <script src="//tdn.da-services.ch/current/tagesanzeiger.js"></script>
+        <script>
+            var category = "zuerich";
+            var subcategory = "default";
+            if (category == "default" || category == undefined)
+            {
+                var nav1 = window.location.pathname.split("/")[1];
+                var nav2 = window.location.pathname.split("/")[2];
+                if (nav1) { category = nav1; }   
+                if (nav2) { subcategory = nav2; }   
+            }
+            var adPath = category + "/" + subcategory;
+            
+            TATM.init("de-tagesanzeiger.ch", adPath, {}, false, 1024);
+        </script>
+        <!--
+            TATM.init("de-tagi.ch,"front/default", 1, 2, 3);
+            1. Parameter (ex. var tatmParams = {storyid: 1234567};)
+            2. Stringfied dom-node (ex. "<p>Werbung</p>") | inactive/invisible = false
+            3. Website content-width (ex. 1024)
+        -->
+        
+    <!--
+        used to change the ad path
+        old: de-tagesanzeiger.ch/front/default/overlay
+        new: de-tagesanzeiger.ch/overlay/front/default
+    -->
+    <script>
+    var ads = require("framework/ads/ads").ads;
+    var config = require("framework/config").config;
+    ads.configure(config);
+    ads.init();
+
+    TATM.adUnitFirst = true;
+    </script>
+
+
+    <script>
+    function TATMdisplayAds() {
+        if (!TATM.loadAdsActive) {
+            TATM.displayAds();
+        }  
+    }
+    </script>
+    <!-- GOOGLE DFP TOP scripts end -->
+    <div id="ad-overlay-586998036"></div>
+			<script>
+			
+			
+				TATM.core.initAdUnits([{
+					adUnitName: "overlay",
+					targetContainerId: "ad-overlay-586998036"
+				}]);
+			</script>
+		
+    <!-- Socio-Demographic Targeting script start-->
+    <script>
+        tamediaBID = null;
+
+        function initTamediaBID() {
+            if (!tamediaBID) {
+                try {
+                    tamediaBID = "publishing/"+JSON.parse(document.querySelector("meta[name='c1_user_info']").getAttribute("content")).user_id;
+                }
+                catch(err) {
+                    tamediaBID = null;
+                }
+            }  
+        };
+    </script>
+    <!-- Socio-Demographic Targeting script end-->
+
+    <script>
+    window.onload = function() {
+        initTamediaBID();
+    };
+    setTimeout(function(){
+        initTamediaBID();
+    }, 1000);
+
+    setTimeout(function(){
+        TATMdisplayAds();
+    }, 5000);
+    </script>
+    
+
+<script>
+    window.redesign2014 = 1;
+</script>
+
+
+
+<link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/cdn/swiper/2/dist/idangerous.swiper.css">
+<link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/cdn/nn2/framework/0.1/styles/sprites.css?v=238">
+<link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/cdn/nn2/desktop/0.1/styles/desktop.css?v=238">
+<!-- <link rel="stylesheet" type="text/css" href="https://files.newsnetz.ch/css/exportedFromNN2/styles/desktop.css?v=238"> -->
+
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/scoreboard.css?v=1537875075" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/liveticker.css?v=1537847555" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/slideshow.css?v=1537871805" type="text/css" />
+
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/baseStyles_v5.css?v=1537872139" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/TA_styles_v5.css?v=1537874667" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/TA_fontStyles.css?v=1537876420" type="text/css" />
+<!--[if IE]>
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/base_stylesIE_v4.css?v=1537875148" type="text/css" />
+<link rel="stylesheet" href="https://files.newsnetz.ch/css/TA_stylesIE_v4.css?v=1537878301" type="text/css" />
+<![EndIf]-->
+
+<link rel="stylesheet" media="print" href="https://files.newsnetz.ch/css/print_red.css" type="text/css" />
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.mouse.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/ui/jquery.ui.slider.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/updated/jquery.validateDE.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch/scripts/jquery.carousel.min.js" type="text/javascript"></script>
+<script src="https://files.newsnetz.ch//scripts/dimension_watcher.js"></script>
+<script>DimensionWatcher.watchIframeContent();</script>
+
+
+<!-- BEGIN Krux Control Tag for "tagesanzeiger.ch" -->
+<!-- Source: /controltag?confid=KVqVXOwf&site=tagesanzeiger.ch&edit=1 -->
+<!-- END Krux Controltag -->
+<script language='javascript'>$(document).ready(function(){$('body').append('<img src="https://tda.tagesanzeiger.ch/in/newsnet/in.gif" width="1" height="1" display="none">');});</script><script src="https://w.tda.io/scripts/newsnet/dakt.min.js" async defer></script>
+</head>
+<body> 
+  
+  <div id="mainWrapper" class="category">
+		<div id="mainLeftWrapper">
+						
+			
+			<style>
+				.ad-outside-right { position: fixed; top: 28px; left: calc(50% + 512px); }
+				@media screen and (max-width: 1626px) { .ad-outside-right { left: calc(100% - 300px); } }
+				@media screen and (max-width: 1323px) { .ad-outside-right { left: 1024px; } }	
+			</style>
+			<div class="ad-outside-right" id="ad-outside-right-72813957"></div>
+			<script>
+			
+			
+				TATM.core.initAdUnits([{
+					adUnitName: "outside-right",
+					targetContainerId: "ad-outside-right-72813957"
+				}]);
+			</script>
+		
+								
+			<div id="mainContainer">
+					
+				
+
+				<div style="position:absolute">
+					<script language="JavaScript" type="text/javascript"> <!--
+						var WEMF2="https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/";
+                        if (navigator.userAgent.match(/iPad/gi)) {
+                            WEMF2 = "https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/mobile/tablet/web/";
+                        }
+						document.write("<img src='"+WEMF2+"zuerich/ressort?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+" ' width='1' height='1' alt='' />");
+						// -->
+					</script>
+					<noscript>
+						<img src="https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/zuerich/ressort" width="1" height="1" alt="" />
+					</noscript>
+				</div>
+			
+			<div style="position:absolute">
+				<script language="JavaScript" type="text/javascript"> <!--
+					var WEMF="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/";
+                    if (navigator.userAgent.match(/iPad/gi)) {
+                            WEMF="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/mobile/tablet/web/";
+                    }
+					document.write("<img src='"+WEMF+"zuerich/ressort?r="+escape(document.referrer)+"&d="+(Math.random()*100000)+"' width='1' height='1' alt='' />");
+					// -->
+				</script>
+				<noscript>
+					<img src="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/zuerich/ressort" width="1" height="1" alt="" />
+				</noscript>
+				<script language="Javascript">var szmvars="tagi-ssl//CP//zuerich/ressort";</script>
+				<script language="Javascript" src="//tagi-ssl.wemfbox.ch/2004/01/survey.js"></script>
+			</div>
+		
+				<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "//www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	if (typeof(_gat) == 'object') {
+		var pageTracker = _gat._getTracker("UA-431029-1");
+		pageTracker._setDomainName("tagesanzeiger.ch");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		var secondTracker = _gat._getTracker("UA-431029-7");
+		secondTracker._setDomainName("none");
+		secondTracker._setAllowLinker(true);
+		secondTracker._initData();
+		secondTracker._trackPageview();
+	}
+</script>
+
+
+
+				
+
+		<script>
+            var track_wemf = function(url, callback)
+            {
+                url = (url==null) ? '' : url;
+                
+				var WEMF="//tagi-ssl.wemfbox.ch/cgi-bin/ivw/CP/";
+				track_wemf_do(WEMF+'zuerich/'+url);
+
+			 
+				var WEMF2="https://newsnetz-ssl.wemfbox.ch/cgi-bin/ivw/CP/tagi-ssl/";
+				track_wemf_do(WEMF2+'zuerich/'+url);
+            
+            }
+
+            var track_wemf_do = function(url2, callback)
+            {
+                var img = new Image();
+                if(typeof callback === "function") {
+                    $(img).load(callback);
+                }
+                img.src = url2 + "?rnd=" + parseInt(new Date().getTime() * Math.random(), 10);
+            }
+		</script>
+	
+			
+				<div id="headerWrapper" style="width: 100%">
+					
+    <section id="header">
+        <div id="topNav">
+    <ul class="paywallUserNavigation">
+        <li></li>
+    </ul>
+    
+    <ul class="productNav">
+        <li>
+            <a href="http://tagesanzeiger.homegate.ch/homegate/index?layout=&amp;agency=&amp;utm_source=nn_TA&amp;utm_medium=liim&amp;utm_term=ies&amp;utm_campaign=partn_d" target="_blank">Immo</a>
+        </li>
+        <li>·</li>
+        <li>
+            <a href="http://tagesanzeiger.sich-erinnern.ch" target="_blank">Trauer</a>
+        </li>
+        <li>·</li>
+		<li>
+			<a title="Das Magazin" target="_blank" href="//www.dasmagazin.ch">Das Magazin</a>
+        </li>
+        <li>
+            <form action="//www.tagesanzeiger.ch/service/suche/suche.html?date=alle&amp;order=date" method="get">
+                <span class="icon-search"></span>
+                <input type="hidden" name="date" id="date" value="alle">
+                <input type="hidden" name="order" id="order" value="date">
+                <input class="innerBoxShadow" onfocus="searchFocus(this)" onblur="searchBlur(this)" name="key" type="text" value="Suche" title="Suche" id="headerSearch">
+                <button title="Submit Search" class="btn"></button>
+            </form>
+        </li>
+    </ul>
+    <div class="clear"></div>
+</div>
+
+<script>
+    var paywallInterface = require("framework/paywallInterface").paywallInterface,
+        paywallEventHandler = require("framework/paywallEventHandler").paywallEventHandler,
+        paywallUserNavigation = require("framework/paywallUserNavigation/paywallUserNavigation").PaywallUserNavigation;
+
+    paywallUserNavigation.insert(
+        $("#topNav .paywallUserNavigation li")[0], {
+            "interface": paywallInterface,
+            "eventHandler": paywallEventHandler
+        }
+    );
+</script>
+        <div id="masthead" >
+            <ul>
+                
+                
+        <li id="tagiLogo" class="categoryLogo">
+            <a href="http://www.tagesanzeiger.ch" title="Tages-Anzeiger Startseite">
+                <img src="//www.tagesanzeiger.ch/images/logos/categoryLogo.png" id="mainLogo" alt="Tages-Anzeiger" style="display:inline;" />
+                <script type="text/javascript">
+                    if (/iPad|iPod|iPhone/.test(navigator.userAgent) || window.devicePixelRatio > 1){
+                        document.getElementById('mainLogo').src = "//www.tagesanzeiger.ch/images/logos/categoryLogo@2x.png";
+                    }
+                </script>
+                <noscript>
+                    <img src="//www.tagesanzeiger.ch/images/logos/categoryLogo.png" id="mainLogo" alt="Tages-Anzeiger" />
+                </noscript>
+            </a>    
+        </li>
+    
+                
+                
+                
+                
+            </ul>
+            
+                <div id='headerWeather' style="visibility:hidden; overflow:hidden; height:0; width:0; display:inline-block" >
+                    <a href="http://www.tagesanzeiger.ch/wetter/zuerich" title="sonnig"><img src="https://files.newsnetz.ch//wetter/icons/160px/day/k_01.png" /><br /><span>5°/15 °</span></a>
+                </div>
+                
+        </div>
+        <div class="clear"></div>
+        
+        <div id="mainNav"><ul>
+				<li>
+					<a href="http://www.tagesanzeiger.ch/" class="">Front</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/zuerich/" class="active">Zürich</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/schweiz/" class="">Schweiz</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/ausland/" class="">International</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/wirtschaft/" class="">Wirtschaft</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/stock_market/uebersicht/" class="">Börse</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/sport/" class="">Sport</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/kultur/" class="">Kultur</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/reisen/" class="">Reisen</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/wissen/" class="">Wissen</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/auto/" class="">Auto</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/blogs/" class="">Blogs</a>
+				</li>
+			
+				<li>
+					<a href="http://www.tagesanzeiger.ch/panorama/" class="">Panorama</a>
+				</li>
+			
+    			<li class="dropdownNavi">
+				<a href="javascript:void(0)">
+					Mehr
+					<span class="icon-down"></span>
+				</a>
+				<ul>
+					<!--[if IE 8]><div id="ie8"><![endif]-->
+					<li class="epaper"><a href="http://epaper.tagesanzeiger.ch/" target="_blank">E-Paper</a></li>
+					<li class="sonntagszeitung"><a href="http://www.tagesanzeiger.ch/sonntagszeitung/">SonntagsZeitung</a></li>
+					<li class="digital"><a href="http://www.tagesanzeiger.ch/digital/">Digital</a></li>
+					<li class="leben"><a href="http://www.tagesanzeiger.ch/leben/">Leben</a></li>
+					<li class="forum"><a href="http://www.tagesanzeiger.ch/forum/">Forum</a></li>
+					<li class="longform"><a href="http://www.tagesanzeiger.ch/longform/">Web-Spezial</a></li>
+					<li class="dasMagazin"><a href="http://epaper.dasmagazin.ch" target="_blank">Das Magazin</a></li>
+					<li class="zhTipp"><a href="http://www.tagesanzeiger.ch/zueritipp">Züritipp</a></li>
+					<li class="krankenkassen"><a href="https://s3-eu-west-1.amazonaws.com/media.das.tamedia.ch/comparis/index.html?mandant=tagesanzeiger&utm_source=newsnet&utm_medium=banner&utm_campaign=kk-herbst-de&utm_content=desktop-mobile-app-201709-navigation-newsnet">Krankenkassen</a></li>
+					<li class="autoversicherung"><a href="https://s3-eu-west-1.amazonaws.com/media.das.tamedia.ch/comparis/auto/index.html?mandant=tagesanzeiger">Autoversicherung</a></li>
+					<li class="carteBlanche"><a href="http://www.tagesanzeiger.ch/carteblanche/">Carte Blanche</a></li>
+					<li class="weiterbildung"><a href="http://weiterbildung.tagesanzeiger.ch/">Weiterbildung</a></li>
+					<li class="eva"><a href="http://www.tagesanzeiger.ch/bildstrecke.html?id=24883">Eva</a></li>
+					<li class="agenda"><a href="http://agenda.zueritipp.ch">Agenda</a></li>
+					<!--[if IE 8]></div><![endif]-->
+				</ul>
+			</li>
+		</ul></div> 
+			<script type="text/javascript">
+				jQuery(function() {
+
+				    jQuery("li.dropdownNavi").each(function(i){
+				      jQuery(this).hover(function(){
+				      	jQuery(this).find("ul").slice(0,1).addClass("activeDD"); 
+				      	jQuery(this).find(".icon-down").removeClass().addClass("icon-up");
+				      	},function(){
+				      		jQuery(this).find("ul").slice(0,1).removeClass("activeDD");
+				      		jQuery(this).find(".icon-up").removeClass().addClass("icon-down");
+				      	});
+				    });
+
+				    // IE6 Fix: 
+				    if(jQuery.browser.msie && (jQuery.browser.version < 7)) {
+				      jQuery("li.dropdownNavi").each(function(i){
+				        jQuery(this).find("ul").hover(function(){jQuery(this).addClass("activeDD");},function(){jQuery(this).removeClass("activeDD");});
+				      });
+				    }
+
+			  });
+			</script>     
+		
+        
+        <div id="subnavigation">
+            <ul><!--[if IE 8]><div id="ie8"><![endif]-->
+					  <li><a href="http://www.tagesanzeiger.ch/zuerich/stadt/" >Stadt Zürich</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/zuerich/region/" >Region</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/zuerich/bellevue/" >Bellevue</a></li>
+					  <li><a href="http://blog.tagesanzeiger.ch/stadtblog/" >Stadtblog</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/zuerich/verbrechen-und-unfaelle/" >Blaulicht & Justiz</a></li>
+					  <li><a href="http://www.tagesanzeiger.ch/zuerich/bildstrecke.html" >Bildstrecken</a></li>
+					  <li><a href="http://marktplatz.tagesanzeiger.ch/" >Marktplatz</a></li><li class="clear"></li><!--[if IE 8]></div><![endif]--></ul>
+        </div>
+    
+    </section>
+    
+					
+				</div>
+
+				
+			<style>
+				.ad-inside-full-top { margin-left: -7px; margin-top: 12px; }	
+			</style>
+			<div class="ad-inside-full-top" id="ad-inside-full-top-73165236"></div>
+			<script>
+			
+			
+				TATM.core.initAdUnits([{
+					adUnitName: "inside-full-top",
+					targetContainerId: "ad-inside-full-top-73165236"
+				}]);
+			</script>
+		
+				<script>
+					TATMdisplayAds(); 
+				</script>
+			
+
+				
+			<!-- start customized html header -->
+				
+			<!-- end customized html header -->
+			
+
+				<div id="mainColLeft" class="mainColLeftSection">
+					<!-- BEGIN Storylist /zuerich/ ressort_zuerich 1 --><!-- atype=200 666-->
+            <div id='topStoryA'>
+                <div class="featureStory standard layout_2">
+                    
+                    
+                    <h3>
+                        <a href="/zuerich/ein-ticket-in-die-schweiz-fuer-5600-euro/story/13957718" >
+                            Ticket in die Schweiz für 5600 Euro 
+                        </a>
+                    </h3>
+                    <a href="/zuerich/ein-ticket-in-die-schweiz-fuer-5600-euro/story/13957718" ><img alt="" src="https://files.newsnetz.ch/story/1/3/9/13957718/15/teaserbreitgross.jpg" class="imgfloat" /></a>
+                    <p>
+                    	
+                        
+                        
+                        
+                        Ein Mann, selbst auf der Flucht, nimmt eine Flüchtlingsfrau von Griechenland Richtung Schweiz mit. Nun wurde er als Schlepper verurteilt.
+                        <a href="/zuerich/ein-ticket-in-die-schweiz-fuer-5600-euro/story/13957718">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Liliane Minor. </span>
+                        <time class="time">				
+					<script language="JavaScript">
+					//<![CDATA[
+					$(document).ready(function(){
+						$("#aktualisiert-13957718-2").each(function(){  
+					    var dStartTime = new Date(2018, 9, 25, 13, 35, 0);						
+							ShowTime(dStartTime, "aktualisiert-13957718-2", "Aktualisiert vor 1 Minute", "Aktualisiert vor [minute] Minuten", "13:35", "25.09.2018");	});
+					});						
+						//]]>
+					</script>
+				 <span id="aktualisiert-13957718-2"></span> </time>
+                         
+                        <div site_id="2" story_id="13957718" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <div class="clear"></div>
+                    <ul>
+                        <li><a href="/ausland/europa/Sitzen-Schlepper-und-Helfer-im-selben-Boot/story/22992007"><span class="icon icon-right"></span>Sitzen Schlepper und Helfer im selben Boot?</a></li><li><a href="/ausland/europa/Sie-liessen-71-Fluechtlinge-einfach-ersticken/story/13172416"><span class="icon icon-right"></span>Sie liessen 71 Flüchtlinge einfach ersticken</a></li>
+                    </ul>
+                </div>
+            </div>
+        <div id="stories"><!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/stadt/zuerich-von-unten/story/31094492" ><img alt="" src="https://files.newsnetz.ch/story/3/1/0/31094492/51/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/stadt/zuerich-von-unten/story/31094492" >
+                            Zürich «von unten»
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Emil Acklins Blick durch die Kamera galt Zürchern, die hart gearbeitet und bescheiden gelebt haben. Eine neue Ausstellung bewahrt sie vor der Vergessenheit. 
+                        <a href="/zuerich/stadt/zuerich-von-unten/story/31094492">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Werner Schüepp. </span>
+                        <time class="time">12:11</time>
+                        
+                        <div site_id="2" story_id="31094492" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li> <a href="javascript:showSlideshow(301969, { fullscreenOnly: true, ads: true }); void(0);"><span class="icon icon-slide"></span>Klassenkampf mit Kamera</a></li><li><a href="/zuerich/stadt/Ein-Klick-in-laengst-vergangene-Zeiten/story/30964085"><span class="icon icon-right"></span>Ein Klick in längst vergangene Zeiten</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        
+						<div class="channelWertend">
+							<!-- BEGIN Storylist 1 3 /zuerich/ ressort_3_1_2 --><!-- END Storylist /zuerich/ -->
+						</div>
+					<!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/stadt/zuerich-rechnet-nicht-mehr-mit-defizit/story/17216260" ><img alt="" src="https://files.newsnetz.ch/story/1/7/2/17216260/12/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/stadt/zuerich-rechnet-nicht-mehr-mit-defizit/story/17216260" >
+                            Zürich rechnet nicht mehr mit Defizit
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Der Zürcher Stadtrat rechnet 2019 mit einem kleinen Plus von gut 40 Millionen Franken. Vor einem Jahr war er noch weniger optimistisch.
+                        <a href="/zuerich/stadt/zuerich-rechnet-nicht-mehr-mit-defizit/story/17216260">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">				
+					<script language="JavaScript">
+					//<![CDATA[
+					$(document).ready(function(){
+						$("#aktualisiert-17216260-1").each(function(){  
+					    var dStartTime = new Date(2018, 9, 25, 14, 30, 58);						
+							ShowTime(dStartTime, "aktualisiert-17216260-1", "Aktualisiert vor 1 Minute", "Aktualisiert vor [minute] Minuten", "14:30", "25.09.2018");	});
+					});						
+						//]]>
+					</script>
+				 <span id="aktualisiert-17216260-1"></span> </time>
+                        
+                        <div site_id="2" story_id="17216260" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/Steuervorlage-Gewerkschaften-drohen-mit-Referendum/story/12636037"><span class="icon icon-right"></span>Steuervorlage: Gewerkschaften drohen mit Referendum</a></li><li><a href="/zuerich/Stadtfinanzen-Leupi-schlaegt-Alarm/story/20084034"><span class="icon icon-right"></span>Stadtfinanzen: Leupi schlägt Alarm</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/nach-dem-salafistentreffen-auf-die-jihadreise/story/18126134" ><img alt="" src="https://files.newsnetz.ch/story/1/8/1/18126134/15/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/nach-dem-salafistentreffen-auf-die-jihadreise/story/18126134" >
+                            In Winterthurer Hotel vom Jihad überzeugt
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Sarah O. (20) traf sich vor fünf Jahren im Hotel Töss mit Salafisten. Kurz darauf schloss sie sich in Syrien dem IS an. Nun wurde sie verhaftet. Was geschah?
+                        <a href="/zuerich/region/nach-dem-salafistentreffen-auf-die-jihadreise/story/18126134">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                        <a class="premium" href="/zuerich/region/nach-dem-salafistentreffen-auf-die-jihadreise/story/18126134" >ABO+</a> <span class="author"> Kurt Pelda. </span>
+                        <time class="time">08:56</time>
+                        
+                        <div site_id="2" story_id="18126134" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/Neun-Glaeubige-der-An-NurMoschee-kommen-vor-Gericht/story/11837050"><span class="icon icon-right"></span>Neun Gläubige der An'Nur-Moschee kommen vor Gericht</a></li><li><a href="/zuerich/region/An-NurImam-empfahl-Hinrichtungsvideo/story/24015189"><span class="icon icon-right"></span>An’Nur-Imam empfahl Hinrichtungsvideo</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                <!-- no decoration for this type -->
+                <a href="/zuerich/bellevue/velowerkstatt-auf-vier-raedern/story/30439997" ><img alt="" src="https://files.newsnetz.ch/story/3/0/4/30439997/8/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/bellevue/velowerkstatt-auf-vier-raedern/story/30439997" >
+                            Velowerkstatt auf vier Rädern
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        <span class="leadDecoration leadAdditions keyword" style="color:#000000">Bellevue</span>
+                        Statt das Velo zum Mech zu fahren, fährt der Mech zum Velo: Das ist die Idee von Fixfox. Die Bellevue-Redaktion hat die erste mobile Velowerkstatt getestet.
+                        <a href="/zuerich/bellevue/velowerkstatt-auf-vier-raedern/story/30439997">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Liliane Minor. </span>
+                        <time class="time">07:17</time>
+                        <!-- no decoration for this type -->
+                        <div site_id="2" story_id="30439997" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/stadt/ZueriVeloStationen-verwaisen/story/14209750"><span class="icon icon-right"></span>Züri-Velo-Stationen verwaisen</a></li><li><a href="/zuerich/stadt/Los-gehts-mit-dem-ZueriVelo/story/11753111"><span class="icon icon-right"></span>Los gehts mit dem Züri-Velo</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/militaerkaserne-neben-schule-empoert-rafzer/story/24575012" ><img alt="" src="https://files.newsnetz.ch/story/2/4/5/24575012/26/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/militaerkaserne-neben-schule-empoert-rafzer/story/24575012" >
+                            «Halt!», sonst wird geschossen
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Ein Warnschild der provisorischen RS-Kaserne neben der Sekundarschule in Rafz empört Anwohner.
+                        <a href="/zuerich/region/militaerkaserne-neben-schule-empoert-rafzer/story/24575012">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Corsin Zander. </span>
+                        <time class="time">24.09.2018</time>
+                        
+                        <div site_id="2" story_id="24575012" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li> <a href="javascript:showSlideshow(301955, { fullscreenOnly: true, ads: true }); void(0);"><span class="icon icon-slide"></span>Militärkaserne neben Schule empört Rafzer</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        
+			<style>
+				.ad-inside-half { margin-top: 12px; margin-bottom: 12px; }	
+			</style>
+			<div class="ad-inside-half" id="ad-inside-half-266051024"></div>
+			<script>
+			
+			
+				TATM.core.initAdUnits([{
+					adUnitName: "inside-half",
+					targetContainerId: "ad-inside-half-266051024"
+				}]);
+			</script>
+		<!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/tote-frau-vom-maisfeld-identifiziert/story/12593660" ><img alt="" src="https://files.newsnetz.ch/story/1/2/5/12593660/4/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/tote-frau-vom-maisfeld-identifiziert/story/12593660" >
+                            Tote Frau vom Maisfeld identifiziert
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Es handelte sich um eine 52-jährige Vermisste.
+                        <a href="/zuerich/region/tote-frau-vom-maisfeld-identifiziert/story/12593660">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">24.09.2018</time>
+                        
+                        <div site_id="2" story_id="12593660" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/Leiche-in-einem-Maisfeld-in-Oberglatt-entdeckt/story/27099248"><span class="icon icon-right"></span>Leiche in einem Maisfeld in Oberglatt entdeckt</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/steuervorlage-gewerkschaften-drohen-mit-referendum/story/12636037" ><img alt="" src="https://files.newsnetz.ch/story/1/2/6/12636037/4/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/steuervorlage-gewerkschaften-drohen-mit-referendum/story/12636037" >
+                            Steuervorlage: Gewerkschaften drohen mit Referendum
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Der Kanton präsentiert seinen Vorschlag für die Umsetzung der Steuervorlage 17. Die Gewerkschaften sind nicht einverstanden. 
+                        <a href="/zuerich/region/steuervorlage-gewerkschaften-drohen-mit-referendum/story/12636037">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">24.09.2018</time>
+                        
+                        <div site_id="2" story_id="12636037" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/schweiz/standard/Der-AHVSteuerdeal-steht/story/25316789"><span class="icon icon-right"></span>Der AHV-Steuerdeal steht</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/publibikes-sind-zurueck/story/18723986" ><img alt="" src="https://files.newsnetz.ch/story/1/8/7/18723986/10/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/publibikes-sind-zurueck/story/18723986" >
+                            Publibikes sind zurück
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Ab heute rollen die grauen Leihvelos wieder durch Zürich – und sind nicht mehr so leicht zu knacken.
+                        <a href="/zuerich/region/publibikes-sind-zurueck/story/18723986">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">24.09.2018</time>
+                        
+                        <div site_id="2" story_id="18723986" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/stadt/PubliBike-zieht-auch-in-Zuerich-alle-Velos-ein/story/18680662"><span class="icon icon-right"></span>PubliBike zieht auch in Zürich alle Velos ein</a></li><li><a href="/wirtschaft/standard/Geknackte-Schloesser-und-Streit-mit-Konkurrenten/story/25529458"><span class="icon icon-right"></span>Geknackte Schlösser und Streit mit Konkurrenten</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/schaffen-die-zuercher-das-jaegertum-ab/story/18072041" ><img alt="" src="https://files.newsnetz.ch/story/1/8/0/18072041/49/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/schaffen-die-zuercher-das-jaegertum-ab/story/18072041" >
+                            48 Prozent der Dietiker sagen immer noch Nein zur Stadtbahn
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Halbierung der Limmattalbahn, Wildhüter statt Jäger, Filmförderung: Die drei Zürcher Volksinitiativen erreichten nicht einmal <nobr>20 Prozent</nobr> der Stimmen. 
+                        <a href="/zuerich/region/schaffen-die-zuercher-das-jaegertum-ab/story/18072041">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Pascal Unternährer. </span>
+                        <time class="time">23.09.2018</time>
+                        
+                        <div site_id="2" story_id="18072041" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/Vandalen-im-Jagdrevier-Jetzt-reagiert-die-Polizei/story/15237127"><span class="icon icon-right"></span>Vandalen im Jagdrevier: Jetzt reagiert die Polizei</a></li><li><a href="/zuerich/region/Stopp-fuer-die-Limmattalbahn-/story/27344207"><span class="icon icon-right"></span>Stopp für die Limmattalbahn? </a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_66">
+                
+                
+                <a href="/zuerich/region/so-hat-zuerich-entschieden/story/17698994" ><img alt="" src="https://files.newsnetz.ch/story/1/7/6/17698994/23/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/so-hat-zuerich-entschieden/story/17698994" >
+                            So hat Zürich entschieden
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Stadträte, Jäger, Limmattalbahn: Die Resultate der Zürcher Vorlagen vom Abstimmungssonntag im Überblick.
+                        <a href="/zuerich/region/so-hat-zuerich-entschieden/story/17698994">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">24.09.2018</time>
+                        
+                        <div site_id="2" story_id="17698994" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/Adliswil-fuer-einen-Bushof-Langnau-dagegen/story/15186052"><span class="icon icon-right"></span>Adliswil für einen Bushof, Langnau dagegen</a></li><li><a href="/zuerich/region/48-Prozent-der-Dietiker-sagen-immer-noch-Nein-zur-Stadtbahn/story/18072041"><span class="icon icon-right"></span>48 Prozent der Dietiker sagen immer noch Nein zur Stadtbahn</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_66">
+                
+                
+                <a href="/zuerich/region/gemeinden-wollen-schulhaeuser-bauen/story/15186052" ><img alt="" src="https://files.newsnetz.ch/story/1/5/1/15186052/53/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/gemeinden-wollen-schulhaeuser-bauen/story/15186052" >
+                            Adliswil für einen Bushof, Langnau dagegen
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        In mehreren Gemeinden standen grosse Investionen in Schulanlagen an. Sie hatten einen guten Stand.
+                        <a href="/zuerich/region/gemeinden-wollen-schulhaeuser-bauen/story/15186052">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Hélène Arnet. </span>
+                        <time class="time">23.09.2018</time>
+                        
+                        <div site_id="2" story_id="15186052" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/Neues-Schulhaus-fuer-boomendes-Quartier/story/14057940"><span class="icon icon-right"></span>Neues Schulhaus für boomendes Quartier</a></li><li><a href="/zuerich/stadt/2000-neue-Bewohner-aber-kein-Schulhaus/story/16440761"><span class="icon icon-right"></span>2000 neue Bewohner, aber kein Schulhaus</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/stadt/zuercher-bahnhofsquai-wird-bei-starkem-wind-gesperrt/story/17847309" ><img alt="" src="https://files.newsnetz.ch/story/1/7/8/17847309/58/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/stadt/zuercher-bahnhofsquai-wird-bei-starkem-wind-gesperrt/story/17847309" >
+                            Fensterputz-Gondel am Flughafen abgerissen
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#000000">Video</span>
+                        
+                        Sturm Fabienne ist über die Schweiz und Süddeutschland gezogen. In Bayern kam eine Frau ums Leben.
+                        <a href="/zuerich/stadt/zuercher-bahnhofsquai-wird-bei-starkem-wind-gesperrt/story/17847309">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">24.09.2018</time>
+                        
+                        <div site_id="2" story_id="17847309" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/stadt/zuercher-bahnhofsquai-wird-bei-starkem-wind-gesperrt/story/17847309" ><span class="icon icon-video"></span>Sturm Fabienne zieht über die Schweiz</a></li><li><a href="/sonntagszeitung/standard/Feuerwehr-braucht-in-Staedten-zu-lange/story/13656441"><span class="icon icon-right"></span><span class="premium">ABO+</span> Feuerwehr braucht in Städten zu lange</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/stadt/ich-schaetze-frau-badran-sehr-aber-hier/story/12623373" ><img alt="" src="https://files.newsnetz.ch/story/1/2/6/12623373/28/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/stadt/ich-schaetze-frau-badran-sehr-aber-hier/story/12623373" >
+                            «Ich schätze Frau Badran sehr, aber hier...»
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        <span class="leadGenre leadAdditions" style="color:#000000">Video</span>
+                        
+                        Prominenz macht mobil für ein Ja zum neuen Fussballstadion. Dabei kommt Komiker Beat Schlatter ins Grübeln. Und Roger Schawinski macht etwas nicht als erster, aber zum ersten Mal.
+                        <a href="/zuerich/stadt/ich-schaetze-frau-badran-sehr-aber-hier/story/12623373">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Pascal Unternährer. </span>
+                        <time class="time">23.09.2018</time>
+                        
+                        <div site_id="2" story_id="12623373" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/stadt/ich-schaetze-frau-badran-sehr-aber-hier/story/12623373" ><span class="icon icon-video"></span>Ein Schauspieler für das neue Fussballstadion</a></li><li><a href="/zuerich/stadt/Prominente-Linke-setzen-sich-fuer-das-Zuercher-Fussballstadion-ein/story/19920946"><span class="icon icon-right"></span>Prominente Linke setzen sich für das Zürcher Fussballstadion ein</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/zum-schweigen-unterschreiben/story/21539941" ><img alt="" src="https://files.newsnetz.ch/story/2/1/5/21539941/21/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/zum-schweigen-unterschreiben/story/21539941" >
+                            Zum Schweigen unterschreiben
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Zum Amtsantritt sollen alle Schulpflegemitglieder in Uster eine Erklärung unterschreiben, dass sie das Amtsgeheimnis beachten. Das sorgt für Unruhe.
+                        <a href="/zuerich/zum-schweigen-unterschreiben/story/21539941">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Liliane Minor. </span>
+                        <time class="time">21.09.2018</time>
+                        
+                        <div site_id="2" story_id="21539941" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/Stadtrat-zeigt-eigenes-Mitglied-an/story/29013477"><span class="icon icon-right"></span>Stadtrat zeigt eigenes Mitglied an</a></li><li><a href="/zuerich/region/Jeder-Juniorentrainer-steht-heute-unter-Generalverdacht/story/25229458"><span class="icon icon-right"></span>Jeder Juniorentrainer steht heute unter Generalverdacht</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/auf-dem-einfachen-stuhl-spricht-er-vom-inneren-frieden/story/10868090" ><img alt="" src="https://files.newsnetz.ch/story/1/0/8/10868090/43/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/auf-dem-einfachen-stuhl-spricht-er-vom-inneren-frieden/story/10868090" >
+                            Nur auf eine Frage weiss der Dalai Lama keinen Rat
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Der Dalai Lama besucht die Schweiz.  Als erstes trat er am Flughafen auf, lachte viel und kam nur einmal ins Stocken. 
+                        <a href="/zuerich/region/auf-dem-einfachen-stuhl-spricht-er-vom-inneren-frieden/story/10868090">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Stefan Hohler, Ev Manz. </span>
+                        <time class="time">21.09.2018</time>
+                        
+                        <div site_id="2" story_id="10868090" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/auf-dem-einfachen-stuhl-spricht-er-vom-inneren-frieden/story/10868090" ><span class="icon icon-video"></span>Dalai Lama </a></li><li><a href="/zuerich/region/Wer-begruesst-den-Dalai-Lama/story/15020737"><span class="icon icon-right"></span>Wer begrüsst den Dalai Lama?</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/region/walter-angst-soll-erster-alregierungsrat-werden/story/29041004" ><img alt="" src="https://files.newsnetz.ch/story/2/9/0/29041004/9/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/region/walter-angst-soll-erster-alregierungsrat-werden/story/29041004" >
+                            Walter Angst soll erster AL-Regierungsrat werden 
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Die Alternative Liste steigt mit dem Gemeinderat und Sprecher des Mieterverbands ins Rennen um einen Sitz im Regierungsrat.
+
+
+                        <a href="/zuerich/region/walter-angst-soll-erster-alregierungsrat-werden/story/29041004">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">21.09.2018</time>
+                        
+                        <div site_id="2" story_id="29041004" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/region/MachoTipps-sollen-Natalie-Rickli-verhindern/story/21611051"><span class="icon icon-right"></span><span class="premium">ABO+</span> Macho-Tipps sollen Natalie Rickli verhindern</a></li><li><a href="/zuerich/region/Er-ist-verbrannt-SVP-liess-Ricklis-Gegner-fallen/story/12473171"><span class="icon icon-right"></span>«Er ist verbrannt»: SVP liess Ricklis Gegner fallen</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/stadt/die-schoenste-wiese-europas/story/21485293" ><img alt="" src="https://files.newsnetz.ch/story/2/1/4/21485293/14/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/stadt/die-schoenste-wiese-europas/story/21485293" >
+                            Die «schönste Wiese Europas»
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Sie gilt als Geheimtipp: die Hürstwiese in Affoltern. Jetzt soll das Idyll einen Brunnen und ein Züri-WC erhalten.
+                        <a href="/zuerich/stadt/die-schoenste-wiese-europas/story/21485293">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         <span class="author"> Martin Huber . </span>
+                        <time class="time">21.09.2018</time>
+                        
+                        <div site_id="2" story_id="21485293" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/stadt/Die-HappyWiese/story/26067391"><span class="icon icon-right"></span><span class="premium">ABO+</span> Die Happy-Wiese</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/stadt/maedchen-von-toeff-angefahren/story/27042641" ><img alt="" src="https://files.newsnetz.ch/story/2/7/0/27042641/9/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/stadt/maedchen-von-toeff-angefahren/story/27042641" >
+                            Mädchen von Töff angefahren
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Ein Motorradfahrer hat ein 7-jähriges Mädchen angefahren und verletzt. Die Polizei sucht den Lenker und Zeugen. 
+                        <a href="/zuerich/stadt/maedchen-von-toeff-angefahren/story/27042641">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">21.09.2018</time>
+                        
+                        <div site_id="2" story_id="27042641" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        <!-- atype=230 666-->
+            <div class="featureStory standard layout_2">
+                
+                
+                <a href="/zuerich/stadt/landmann-fuer-svp-nominiert/story/15691998" ><img alt="" src="https://files.newsnetz.ch/story/1/5/6/15691998/3/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <div>
+                    <h3>
+                        <a href="/zuerich/stadt/landmann-fuer-svp-nominiert/story/15691998" >
+                            Landmann für SVP nominiert
+                        </a>
+                    </h3>
+                    <p>
+                        
+                        
+                        
+                        Die Kreispartei Zürichberg stellt Valentin Landmann für die Kantonsratswahlen auf. Auf einem aussichtsreichen Platz.
+                        <a href="/zuerich/stadt/landmann-fuer-svp-nominiert/story/15691998">Mehr...</a>
+                    </p>
+                    <p class="storyInfo">
+                         
+                        <time class="time">21.09.2018</time>
+                        
+                        <div site_id="2" story_id="15691998" content_typ="article_teaser" class="SocialMediaBox"></div>
+                    </p>
+                    <ul>
+                        <li><a href="/zuerich/stadt/Valentin-Landmann-angefahren--VeloRowdy-verhaftet/story/31687888"><span class="icon icon-right"></span>Valentin Landmann angefahren – <nobr>Velo-Rowdy</nobr> verhaftet</a></li><li><a href="/zuerich/stadt/Valentin-Landmann-auf-SVPSpitzenplatz/story/25195124"><span class="icon icon-right"></span>Valentin Landmann auf SVP-Spitzenplatz</a></li>
+                    </ul>
+                </div>
+                <p class="clear"></p>
+            </div>
+        </div><!-- END Storylist /zuerich/ -->
+					<!-- BEGIN PrimeSection /zuerich/ -->
+					<div class="bottomLinks">
+						<div class="slideshows">
+							<h4 class="contextBoxTitle"><a href="/bildstrecke.html">Bildstrecken</a></h4>
+							<!-- atype=215 666-->
+            <div class="story standard layout_8 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="javascript:showSlideshow(0, { fullscreenOnly: true, ads: true }); void(0);" ><img alt="" src="https://files.newsnetz.ch/story/1/0/8/10818843/10/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="javascript:showSlideshow(0, { fullscreenOnly: true, ads: true }); void(0);">
+                        
+                        <span class="keyword">Siegerbilder «Erntezeit»</span>
+                        Die besten Einsendungen zum Leserfoto der Woche.
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        <!-- atype=215 666-->
+            <div class="story standard layout_8 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="javascript:showSlideshow(0, { fullscreenOnly: true, ads: true }); void(0);" ><img alt="" src="https://files.newsnetz.ch/story/2/8/5/28562194/11/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="javascript:showSlideshow(0, { fullscreenOnly: true, ads: true }); void(0);">
+                        
+                        <span class="keyword">Rot? Nie und nimmer!</span>
+                        Die besten Bilder der vergangenen Sportwoche.
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        
+							
+						</div>
+						<div class="videos">
+						
+							<h4 class="contextBoxTitle"><a href="/video/">Video</a></h4>
+							<!-- atype=215 666-->
+            <div class="story standard layout_91 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="/video/?video_id=354045" ><img alt="" src="https://files.newsnetz.ch/story/1/6/5/16562169/8/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="/video/?video_id=354045">
+                        <span class='icon-video'></span>
+                        <span class="keyword">Gebäudebrand beim Zürcher HB</span>
+                        Drohnenaufnahmen und Augenzeugenvideos der Explosionen.
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        <!-- atype=215 666-->
+            <div class="story standard layout_91 relatedThemaMedia teaserEditorialContent">
+                
+                <a href="/video/?video_id=354509" ><img alt="" src="https://files.newsnetz.ch/story/1/8/5/18597255/1/rechte_spalte_gross.jpg" class="imgfloat" /></a>
+                <p>
+                    <a href="/video/?video_id=354509">
+                        <span class='icon-video'></span>
+                        <span class="keyword">Pink-Panther-Räuber in Zürich vor Gericht</span>
+                        Bewaffnete Überfälle auf Schmuckläden, wilde Verfolgungsjagden mit der Polizei – einem Mann drohen 14 Jahre Gefängnis.
+                    </a>
+                </p>
+                <div class="clear"></div>
+            </div>
+        
+						
+						</div>
+						<p class="clear"></p>
+					</div>
+					<!-- END PrimeSection /zuerich/ -->
+					
+				</div>
+				
+				<!--  boxnews kommt neu aus sideline, iicounter auf 2 setzen -->
+				<div id="mainColRight">
+					<!-- Sidelinecachename mainColRight: sideline1_zuerich -->
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 110329 --><a href="/zuerich/region/Aufstieg-und-Fall-des-Zuercher-KebabImperiums-/story/27025242"  title="Aufstieg und Fall des Kebab-Imperiums "><img src="https://files.newsnetz.ch/teaser/1/5/teaser110329_element155353.jpg?time=1537875531" alt="Aufstieg und Fall des Kebab-Imperiums " /></a>  <p><a href="/zuerich/region/Aufstieg-und-Fall-des-Zuercher-KebabImperiums-/story/27025242" ><span class="iconArticle"></span><span class="keyword">Kebab-Imperium</span> 2006 betrieb New Point zwölf Filialen. Nun sind es noch fünf. Gut so, sagt der Gründer Erdogan Gökduman.</a></p>
+				<p class="clear"></p>
+			</div>
+
+			<style>
+				.ad-inside-quarter-pos1 { margin-bottom: 36px; }	
+				#mainColRight #colRightAd { margin: 0; }
+			</style>
+			<div class="ad-inside-quarter-pos1" id="ad-inside-quarter-pos1-260418845"></div>
+			<script>
+			
+			
+				TATM.core.initAdUnits([{
+					adUnitName: "inside-quarter-pos1",
+					targetContainerId: "ad-inside-quarter-pos1-260418845"
+				}]);
+			</script>
+		
+	<!--<a href="#"><img src="/images/demo/button-post2.png" alt="" /></a>-->
+
+
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 110293 --><a href="http://blog.tagesanzeiger.ch/stadtblog/?p=52190"  title="Ein Bollwerk gegen die Gentrifizierung"><img src="https://files.newsnetz.ch/teaser/1/5/teaser110293_element155313.jpg?time=1537875531" alt="Ein Bollwerk gegen die Gentrifizierung" /></a>  <p><a href="http://blog.tagesanzeiger.ch/stadtblog/?p=52190" ><span class="iconArticle"></span><span class="keyword">Ein Bollwerk gegen die Gentrifizierung</span>Ein Jubiläum, das gar nicht hätte zustande kommen dürfen. Das «Supi» feiert seinen 20. Geburtstag.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 110397 --><p class="publiTitle">Paid Post</p><div class="publiBox"><h5 class="1"><a href="/sales/publireportagen/So-machen-Sie-mehr-aus-Ihrem-Spargeld/story/12458220" title="So wird mehr aus Ihrem Spargeld">So wird mehr aus Ihrem Spargeld</a></h5><a href="/sales/publireportagen/So-machen-Sie-mehr-aus-Ihrem-Spargeld/story/12458220"  title=""><img src="https://files.newsnetz.ch/teaser/1/5/teaser110397_element155447.jpg?time=1537875531" alt="" /></a> <p class="publireportageAdText">Es sind karge Zeiten für Sparer: Die Sparkonten werfen so gut wie keinen Zins mehr ab. Doch es gibt eine attraktive Alternative.</p><a href="/sales/publireportagen/So-machen-Sie-mehr-aus-Ihrem-Spargeld/story/12458220"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 110249 --><a href="/zuerich/stadt/Offenbar-hoert-die-Partei-eher-auf-Jacqueline-Badran-als-auf-mich/story/24292493"  title="«Die Partei hat sich versteift»"><img src="https://files.newsnetz.ch/teaser/1/5/teaser110249_element155259.jpg?time=1537875531" alt="«Die Partei hat sich versteift»" /></a>  <p><a href="/zuerich/stadt/Offenbar-hoert-die-Partei-eher-auf-Jacqueline-Badran-als-auf-mich/story/24292493" ><span class="iconArticle"></span><span class="keyword">«Die Partei hat sich versteift»</span> Ein neues Stadion für Zürich? Die SP stellt sich in dieser Frage gegen Stadtpräsidentin Corine Mauch.</a></p>
+				<p class="clear"></p>
+			</div><div class="teaserEditorialContent">
+  	 					
+		<!-- start WirtschaftSideline5th -->
+					
+		<!-- end WirtschaftSideline5th -->
+		
+    				</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 110183 --><a href="/zuerich/region/Brutal-und-ruecksichtslos-Der-geplante-Umweg-der-A1--/story/15944766"  title="«Brutal und rücksichtslos»"><img src="https://files.newsnetz.ch/teaser/1/5/teaser110183_element155167.jpg?time=1537875531" alt="«Brutal und rücksichtslos»" /></a>  <p><a href="/zuerich/region/Brutal-und-ruecksichtslos-Der-geplante-Umweg-der-A1--/story/15944766" ><span class="iconArticle"></span><span class="keyword">«Brutal»: Der geplante Umweg der A1</span>Die vor 50 Jahren eröffnete Umfahrung Winterthur: Es hätte auch anders kommen können.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 70860 -->
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 110157 --><a href="http://blog.tagesanzeiger.ch/stadtblog/?p=52156"  title="Lächelnde Händler des schwarzen Goldes"><img src="https://files.newsnetz.ch/teaser/1/5/teaser110157_element155135.jpg?time=1537875531" alt="Lächelnde Händler des schwarzen Goldes" /></a>  <p><a href="http://blog.tagesanzeiger.ch/stadtblog/?p=52156" ><span class="iconArticle"></span><span class="keyword">Lächelnde Händler des schwarzen Goldes</span>Eine Nische für die Zukunft hat sich aufgetan. Die Beliebtheit von Vinyl steigt sogar bei Zürcher Teenagern. </a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 110119 --><a href="/zuerich/bellevue/Wie-war-das-schoen-so-ohne-Hose/story/16890673"  title="«Wie war das schön, so ohne Hose»"><img src="https://files.newsnetz.ch/teaser/1/5/teaser110119_element155081.jpg?time=1537875531" alt="«Wie war das schön, so ohne Hose»" /></a>  <p><a href="/zuerich/bellevue/Wie-war-das-schoen-so-ohne-Hose/story/16890673" ><span class="iconArticle"></span><span class="keyword">Als es heiss war</span> Die Hitze extrem, die Körper entblösst, wir betrunken. Wir vermissen den Hitzesommer.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 73703 -->
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 110117 --><a href="http://blog.tagesanzeiger.ch/mw/?p=2091"  title="Stadt der Milfs"><img src="https://files.newsnetz.ch/teaser/1/5/teaser110117_element155079.jpg?time=1537875531" alt="Stadt der Milfs" /></a>  <p><a href="http://blog.tagesanzeiger.ch/mw/?p=2091" ><span class="iconArticle"></span><span class="keyword"><!-- no decoration for this type --><span class="leadDecoration leadAdditions keyword" style="color:#e62400">Michèle & Friends</span><!--MF_Stadt der Milfs--></span>Eine neue Generation von Ü-Vierzigerinnen macht Zürich unsicher.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 109905 --><a href="/zuerich/stadt/Das-ist-Zuerichs-beliebteste-Badi/story/16787846"  title="Wo die Zürcher am liebsten abtauchen"><img src="https://files.newsnetz.ch/teaser/1/5/teaser109905_element154807.jpg?time=1537875531" alt="Wo die Zürcher am liebsten abtauchen" /></a>  <p><a href="/zuerich/stadt/Das-ist-Zuerichs-beliebteste-Badi/story/16787846" ><span class="iconArticle"></span><span class="keyword">Das ist Zürichs beliebteste Badi</span>Das Sportamt hat die beliebteste Badi von Zürich erkoren. Der Wettbewerb hat ein kreatives Nachspiel.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 108732 --><p class="publiTitle">Weiterbildung</p><div class="publiBox"><h5 class="1"><a href="http://bit.ly/2KIjWDJ" title="Gamen in der Schule">Gamen in der Schule</a></h5><a href="http://bit.ly/2KIjWDJ"  title=""><img src="https://files.newsnetz.ch/teaser/1/5/teaser108732_element153388.jpg?time=1537875531" alt="" /></a> <p class="publireportageAdText">Die Schule bereitet Kinder auf die Arbeitswelt vor. Das Rüstzeug soll auch spielerisch vermittelt werden.</p><a href="http://bit.ly/2KIjWDJ"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 109835 --><a href="/zuerich/stadt/So-funktioniert-die-Detektivarbeit-der-Brandermittler/story/13600196"  title="So funktioniert die Detektivarbeit"><img src="https://files.newsnetz.ch/teaser/1/5/teaser109835_element154725.jpg?time=1537875531" alt="So funktioniert die Detektivarbeit" /></a>  <p><a href="/zuerich/stadt/So-funktioniert-die-Detektivarbeit-der-Brandermittler/story/13600196" ><span class="iconArticle"></span><span class="keyword">So arbeiten Brandermittler</span> Wie Profis die Ursache eines Feuers aus einem Haufen Schutt und Asche herauslesen.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 109879 --><a href="/zuerich/region/Entdeckungen-aus-der-Bauzone/story/11070217"  title=""><img src="https://files.newsnetz.ch/teaser/1/5/teaser109879_element154771.jpg?time=1537875531" alt="" /></a>  <p><a href="/zuerich/region/Entdeckungen-aus-der-Bauzone/story/11070217" ><span class=""></span><span class="keyword">Schön hässlich</span>Geschichten aus der Bauzone, #117: Warum dieser Zürcher Turm eine Zumutung ist. </a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 74053 --><p class="publiTitle">Abo</p><div class="publiBox"><h5 class="1"><a href="https://abo.tagesanzeiger.ch?utm_source=Tages-Anzeiger&utm_campaign=DG_Promoboxen_TA&utm_medium=Promoboxen&utm_content=Digitalabo1" title="Abo Digital - 26 CHF im Monat ">Abo Digital - 26 CHF im Monat <!-- TADA1 --></a></h5><a href="https://abo.tagesanzeiger.ch?utm_source=Tages-Anzeiger&utm_campaign=DG_Promoboxen_TA&utm_medium=Promoboxen&utm_content=Digitalabo1"  title=""><img src="https://files.newsnetz.ch/teaser/1/1/teaser74053_element110185.jpg?time=1537875531" alt="" /></a> <p class="publireportageAdText">Den Tages-Anzeiger unbeschränkt digital lesen, <b>inkl. ePaper. </b> Flexibel und jederzeit kündbar.</br> <b>Jetzt abonnieren! </b></p><a href="https://abo.tagesanzeiger.ch?utm_source=Tages-Anzeiger&utm_campaign=DG_Promoboxen_TA&utm_medium=Promoboxen&utm_content=Digitalabo1"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 108694 --><a href="https://blog.tagesanzeiger.ch/stadtblog/2018/07/02/we-loew-you/"  title=""><img src="https://files.newsnetz.ch/teaser/1/5/teaser108694_element153346.jpg?time=1537875531" alt="" /></a>  <p><a href="https://blog.tagesanzeiger.ch/stadtblog/2018/07/02/we-loew-you/" ><span class=""></span><span class="keyword">We Löw you</span>Der Anti-Deutschlandreflex in der Stadt lässt uns missgünstig und kleinlich erscheinen.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 108042 --><a href="http://www.tagesanzeiger.ch/zuerich/region/Schraeges-aus-der-Bauzone/story/11070217"  title=""><img src="https://files.newsnetz.ch/teaser/1/5/teaser108042_element152508.jpg?time=1537875531" alt="" /></a>  <p><a href="http://www.tagesanzeiger.ch/zuerich/region/Schraeges-aus-der-Bauzone/story/11070217" ><span class=""></span><span class="keyword">Von allen bösen Geistern verlassen</span>Geschichten aus der Bauzone, Nr. 114: Diese Frau hat das einzige Zürcher Spukhaus identifiziert. An einer Adresse, die nicht mehr existiert.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 92789 --><h5 class="1"><!--PPN Premium Banner Tagi--></h5><iframe id="rectangle_tagi" width="308px" height="268px" srolling="no" frameborder="0" style="overflow:hidden"></iframe>
+<script>
+      var ifrm = document.getElementById("rectangle_tagi");
+      ifrm = ifrm.contentWindow || ifrm.contentDocument.document || ifrm.contentDocument;
+      ifrm.document.open();
+      ifrm.document.write('<script src="https://s3-eu-west-1.amazonaws.com/media.das.tamedia.ch/anprebid/build/ppn_sb_rectangle3_DE_tagesanzeiger/index.js#tagid=10477107" async><\/script>');
+      ifrm.document.close();
+  </script>
+
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 106256 --><a href="/collectionuebersicht/Zuercher-Cafeprotokolle/story/11186955"  title="Das Bellevue protokolliert den geordneten Alltag in sechs Cafés."><img src="https://files.newsnetz.ch/teaser/1/5/teaser106256_element150198.jpg?time=1537875531" alt="Das Bellevue protokolliert den geordneten Alltag in sechs Cafés." /></a>  <p><a href="/collectionuebersicht/Zuercher-Cafeprotokolle/story/11186955" ><span class="iconArticle"></span><span class="keyword"><span class="leadDecoration leadAdditions keyword" style="color:#000000">Serie</span><!-- no decoration for this type -->Zürcher Caféprotokolle</span>Das Bellevue protokolliert den geordneten Alltag in sechs Cafés.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 105980 --><a href="/zuerich/region/Baer-ist-Baer-eine-Bestie-habe-ich-noch-nie-getroffen/story/10536580"  title="«Bär ist Bär, eine Bestie habe ich nie getroffen»"><img src="https://files.newsnetz.ch/teaser/1/4/teaser105980_element149862.jpg?time=1537875531" alt="«Bär ist Bär, eine Bestie habe ich nie getroffen»" /></a>  <p><a href="/zuerich/region/Baer-ist-Baer-eine-Bestie-habe-ich-noch-nie-getroffen/story/10536580" ><span class="iconArticle"></span><span class="keyword">«Bär ist Bär, eine Bestie habe ich nie getroffen»</span>Der Zürcher Reno Sommerhalder sagt, wir hätten ein falsches Bild vom Bären. Das versucht er zu korrigieren.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 109447 --><p class="publiTitle">Service</p><div class="publiBox"><h5 class="1"><a href="http://www.tagesanzeiger.ch/carteblanche/" title="Ihre Spasskarte">Ihre Spasskarte</a></h5><a href="http://www.tagesanzeiger.ch/carteblanche/"  title=""><img src="https://files.newsnetz.ch/teaser/1/5/teaser109447_element154235.jpg?time=1537875531" alt="" /></a> <p class="publireportageAdText">Mit Ihrer Carte Blanche von diversen Vergünstigungen profitieren.</p><a href="http://www.tagesanzeiger.ch/carteblanche/"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 104007 --><a href="/collectionuebersicht/Zuercher-Baugeschichte/story/15990417"  title="Fünf grosse Veränderungen der Stadt in den letzten <nobr>150 Jahren.</nobr>"><img src="https://files.newsnetz.ch/teaser/1/4/teaser104007_element147463.jpg?time=1537875531" alt="Fünf grosse Veränderungen der Stadt in den letzten <nobr>150 Jahren.</nobr>" /></a>  <p><a href="/collectionuebersicht/Zuercher-Baugeschichte/story/15990417" ><span class="iconArticle"></span><span class="keyword">Zürcher Baugeschichte</span>Fünf grosse Veränderungen der Stadt in den letzten <nobr>150 Jahren.</nobr> Die Collection.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 102611 --><a href="/zuerich/stadt/Rolltreppen-und-fliegende-Daecher/story/11943014"  title="Rolltreppen und fliegende Dächer"><img src="https://files.newsnetz.ch/teaser/1/4/teaser102611_element145707.jpg?time=1537875531" alt="Rolltreppen und fliegende Dächer" /></a>  <p><a href="/zuerich/stadt/Rolltreppen-und-fliegende-Daecher/story/11943014" ><span class="iconArticle"></span><span class="keyword">Rolltreppen und fliegende Dächer</span>Wie die öffentlichen Plätze im neuen Zürcher Hochschulquartier aussehen werden.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 108214 --><p class="publiTitle">Weiterbildung</p><div class="publiBox"><h5 class="1"><a href="http://bit.ly/2t8ehzk" title="Lohncheck in Pflegeberufen">Lohncheck in Pflegeberufen</a></h5><a href="http://bit.ly/2t8ehzk"  title=""><img src="https://files.newsnetz.ch/teaser/1/5/teaser108214_element152716.jpg?time=1537875531" alt="" /></a> <p class="publireportageAdText">Qualifiziertes Pflegepersonal ist rar. Eine Pflegeinitiative setzt sich darum für höhere Löhne ein.</p><a href="http://bit.ly/2t8ehzk"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 92362 --><a href="/collectionuebersicht/Das-Beste-aus-Zuerichs-Laeden/story/30770922"  title="Zum Shoppingblog"><img src="https://files.newsnetz.ch/teaser/1/3/teaser92362_element133202.jpg?time=1537875531" alt="Zum Shoppingblog" /></a>  <p><a href="/collectionuebersicht/Das-Beste-aus-Zuerichs-Laeden/story/30770922" ><span class="iconDossier"></span><span class="keyword">Shopping: Das Beste aus Zürichs Läden</span> Die «Züritipp»-Redaktion zeigt, was Sie wollen.</a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent ">
+				<! -- Teaser 87621 --><a href="/zuerich/stadt/Das-sind-die-besten-Bauten-von-Zuerich/story/27069605"  title="Das sind die besten Bauten von Zürich"><img src="https://files.newsnetz.ch/teaser/1/2/teaser87621_element127195.jpg?time=1537875531" alt="Das sind die besten Bauten von Zürich" /></a>  <p><a href="/zuerich/stadt/Das-sind-die-besten-Bauten-von-Zuerich/story/27069605" ><span class="iconArticle"></span><span class="keyword">Die besten Bauten</span>Die Stadt Zürich zeichnet herausragende Bauprojekte der letzten fünf Jahre aus. </a></p>
+				<p class="clear"></p>
+			</div>
+			<div class="teaserEditorialContent  publireportage">
+				<! -- Teaser 99854 --><p class="publiTitle">Newsletter</p><div class="publiBox"><h5 class="1"><a href="http://www.tagesanzeiger.ch/service/unsere-dienste/story/11046178?utm_source=Tages-Anzeiger&utm_campaign=DG_Promoboxen_TA&utm_medium=Promoboxen&utm_content=NL3" title="Der ideale Start in den Tag ">Der ideale Start in den Tag <!-- TANL3 --></a></h5><a href="http://www.tagesanzeiger.ch/service/unsere-dienste/story/11046178?utm_source=Tages-Anzeiger&utm_campaign=DG_Promoboxen_TA&utm_medium=Promoboxen&utm_content=NL3"  title=""><img src="https://files.newsnetz.ch/teaser/1/4/teaser99854_element142410.jpg?time=1537875531" alt="" /></a> <p class="publireportageAdText">Sonntags bis freitags <b>ab 7 Uhr</b> die besten Beiträge aus der Redaktion. </br>
+Newsletter <b>«Der Morgen»</b> jetzt abonnieren.</p><a href="http://www.tagesanzeiger.ch/service/unsere-dienste/story/11046178?utm_source=Tages-Anzeiger&utm_campaign=DG_Promoboxen_TA&utm_medium=Promoboxen&utm_content=NL3"  title=""></a></div>
+				<p class="clear"></p>
+			</div>
+				</div>
+			
+				<br class="clear"/>
+			  
+				
+				<div class="clear"></div>
+<hr>
+<div id="footer">
+	<ul id="bottomNav">
+		<li>
+			<a title="Front" href="//www.tagesanzeiger.ch/">Front</a>
+		</li>
+		<li>
+			<a title="Zürich" href="//www.tagesanzeiger.ch/zuerich/">Zürich</a>
+		</li>
+		<li>
+			<a title="Schweiz" href="//www.tagesanzeiger.ch/schweiz/">Schweiz</a>
+		</li>
+		<li>
+			<a title="International" href="//www.tagesanzeiger.ch/ausland/">International</a>
+		</li>
+		<li>
+			<a title="Wirtschaft" href="//www.tagesanzeiger.ch/wirtschaft/">Wirtschaft</a>
+		</li>
+		<li>
+			<a title="Börse" href="//www.tagesanzeiger.ch/boerse/">Börse</a>
+		</li>
+		<li>
+			<a title="Sport" href="//www.tagesanzeiger.ch/sport/">Sport</a>
+		</li>
+		<li>
+			<a title="Kultur" href="//www.tagesanzeiger.ch/kultur/">Kultur</a>
+		</li>
+		<li>
+			<a title="Reisen" href="//www.tagesanzeiger.ch/reisen/">Reisen</a>
+		</li>
+		<li>
+			<a title="Wissen" href="//www.tagesanzeiger.ch/wissen/">Wissen</a>
+		</li>
+		<li>
+			<a title="Auto" href="//www.tagesanzeiger.ch/auto/">Auto</a>
+		</li>
+		<li>
+			<a title="Blogs" href="//www.tagesanzeiger.ch/blogs/">Blogs</a>
+		</li>
+		<li>
+			<a title="Panorama" href="//www.tagesanzeiger.ch/panorama/">Panorama</a>
+		</li>
+		<li>
+			<a title="Züritipp" href="//www.tagesanzeiger.ch/zueritipp/" target="_blank">Züritipp</a>
+		</li>
+		<li>
+			<a title="Das Magazin" href="//epaper.dasmagazin.ch/" target="_blank">Das Magazin</a>
+		</li>
+		<li>			
+			<!-- change css to use class instead of id cause the searchbar is now in the footer and the header -->
+			<form action="//www.tagesanzeiger.ch/service/suche/suche.html?date=alle&amp;order=date" method="get">
+				<span class="icon-search"></span>
+				<input type="hidden" name="date" id="date" value="alle">
+				<input type="hidden" name="order" id="order" value="date">
+				<input class="innerBoxShadow" onfocus="searchFocus(this)" onblur="searchBlur(this)" name="key" type="text" value="Suche" title="Suche" id="headerSearch">
+				<button title="Submit Search" class="btn"></button>
+			</form>
+		</li>
+	</ul>
+	
+	<div class="clear"></div>
+
+</div>
+
+<div id="footerLinks">
+
+	<div class="partnerNav">
+		<ul>
+			<li>Multimedia</li>
+			<li><a title="Dossiers" href="//www.tagesanzeiger.ch/dossiers/">Dossiers</a></li>
+			<li><a title="Bildstrecken" href="//www.tagesanzeiger.ch/bildstrecke.html">Bildstrecken</a></li>
+			<li><a title="Videos" href="//www.tagesanzeiger.ch/video/">Videos</a></li>
+			<li><a title="ePaper TA" href="//epaper.tagesanzeiger.ch/" target="_blank">ePaper TA</a></li>
+			<li><a title="ePaper SoZ" target="_new" href="//epaper.sonntagszeitung.ch">ePaper SoZ</a></li>
+		</ul>
+	</div>
+
+	<div class="partnerNav">
+		<ul>
+			<li>Services</li>
+			<li><a title="Zeitungsarchiv" href="//www.tagesanzeiger.ch/service/archiv/">Zeitungsarchiv</a></li>
+			<li><a title="RSS" href="//www.tagesanzeiger.ch/dienste/RSS/story/21856776">RSS</a></li>
+			<li><a title="Carte Blanche Newsletter" href="//www.tagesanzeiger.ch/11046178">Newsletter</a></li> 
+			<li><a title="Newsletter" href="//www.tagesanzeiger.ch/service/unsere-dienste/Newsletter/story/18785374">Carte Blanche Newsletter</a></li>
+			<li><a title="Wetter" href="//www.tagesanzeiger.ch/wetter/">Wetter</a></li>
+			<li><a title="Kreuzworträtsel" href="//www.tagesanzeiger.ch/kreuzwortraetsel/">Kreuzworträtsel</a></li>
+			<li><a title="Dienste und Apps" href="//www.tagesanzeiger.ch/service/unsere-dienste/">Dienste und Apps</a></li>
+		</ul>
+	</div>
+	
+	<div class="partnerNav">
+		<ul>
+			<li>Redaktion</li>
+			<li><a title="Publizistische Leitlinien" href="//www.tagesanzeiger.ch/schweiz/standard/Publizistische-Leitlinien-des-TagesAnzeigers/story/31591536">Publizistische Leitlinien</a></li>
+			<li><a title="Impressum" href="//www.tagesanzeiger.ch/ueberuns/impressum/Impressum/story/28680087">Impressum</a></li>
+			<li><a target="_new" title="AGB & Datenschutz" href="https://abo.tagesanzeiger.ch/tamstorefront/terms/register">AGB & Datenschutz</a></li>
+			<li><a title="Leserbriefe" href="//www.tagesanzeiger.ch/service/unsere-dienste/Leserbrief-fuer-den-TagesAnzeiger/story/28343522">Leserbriefe</a></li>
+			<li><a title="Kontakt" href="//www.tagesanzeiger.ch/ueberuns/Kontakt/story/24620705">Kontakt</a></li>
+		</ul>
+	</div>
+
+	<div class="partnerNav">
+		<ul>
+			<li>Dienste</li>
+			<li><a title="Immobilien" href="//www.tagesanzeiger.ch/marktplatz/immobilien/">Immobilien</a></li>
+			<li><a title="Weiterbildung" href="//www.tagesanzeiger.ch/weiterbildung/">Weiterbildung</a></li>
+			<li><a title="Vergleichsdienste" href="//www.tagesanzeiger.ch/vergleichsdienst/">Vergleichsdienste</a></li>
+		</ul>
+	</div>
+	
+	<div class="partnerNav">
+		<ul>
+			<li>Abonnement</li>
+			<li><a title="Alle Abonnement" href="https://abo.tagesanzeiger.ch">Alle Aboangebote</a></li>
+			<li><a title="Ferienumleitung" href="https://abo.tagesanzeiger.ch/tamstorefront/my-account">Ferienumleitung</a></li>
+			<li><a title="Ferienunterbruch" href="https://abo.tagesanzeiger.ch/tamstorefront/my-account">Ferienunterbruch</a></li>
+			<li><a title="Carte Blanche" href="//www.tagesanzeiger.ch/carteblanche/">Carte Blanche</a></li>
+			<li><a title="FAQ" href="https://abo.tagesanzeiger.ch/#questions">Häufig gestellte Fragen</a></li>
+		</ul>
+	</div>
+
+	<div class="partnerNav">
+		<ul>
+			<li>Anzeigen</li>
+			<li><a title="Privatanzeigen" href="https://adbox.tamedia.ch/adbox.html" target="_blank">Privatanzeigen</a></li>
+			<li><a title="Tages-Anzeiger" href="https://www.tamedia.ch/de/marken/details/tages-anzeiger" target="_blank">Tages-Anzeiger</a></li>
+			<li><a title="tagesanzeiger.ch" href="https://www.tamedia.ch/de/marken/details/tages-anzeiger" target="_blank">tagesanzeiger.ch</a></li>
+			<li><a title="Newsnet" href="https://www.tamedia.ch/de/marken/details/newsnet" target="_blank">Newsnet</a></li>
+		</ul>
+	</div>
+
+	<div class="clear"></div>
+
+</div>				
+			
+			</div>
+
+		</div>
+
+  	 
+  	
+ </div>
+<!-- GOOGLE ANALYTICS -->
+<script type="text/javascript">
+var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "//www."); document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+</script>
+<script type="text/javascript">
+	if (typeof(_gat) == 'object') {
+		var pageTracker = _gat._getTracker("UA-431029-1");
+		pageTracker._setDomainName("tagesanzeiger.ch");
+		pageTracker._initData();
+		pageTracker._trackPageview();
+		var secondTracker = _gat._getTracker("UA-431029-7");
+		secondTracker._setDomainName("none");
+		secondTracker._setAllowLinker(true);
+		secondTracker._initData();
+		secondTracker._trackPageview();
+	}
+</script>
+
+
+
+</body>
+</html>
